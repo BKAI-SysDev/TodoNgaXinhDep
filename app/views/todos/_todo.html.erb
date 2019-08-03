@@ -1,0 +1,7 @@
+<%= todo.description %>
+<%= form_for todo do |f| %>
+  <%= f.check_box :status, checked: todo.status %> 
+  <%= f.submit :submit %>
+<% end %>
+<%= render todo.items %> 
+

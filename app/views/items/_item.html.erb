@@ -1,0 +1,11 @@
+<div id="item-<%= item.id %>">
+ <li><%= item.content %></li>
+   <%= form_for item, remote: true do |f| %> 
+       <% if item.status %> 
+         <%= f.check_box :status, checked: true %> 
+       <% else %>
+         <%= f.check_box :status %>
+       <% end %>
+     <%= f.submit :submit %>
+   <% end %>
+</div>

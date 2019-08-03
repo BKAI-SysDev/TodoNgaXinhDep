@@ -1,10 +1,11 @@
 class ItemsController < ApplicationController
   def update 
     @item = Item.find_by id: params[:id]
-    if @item.update_attributes item_params 
-      redirect_to todos_index_url
-    else
-      redirect_to todos_index_url
+    respond_to do |format|
+      format.js do 
+        if @item.update_attributes item_params 
+        end 
+      end
     end
   end
 
